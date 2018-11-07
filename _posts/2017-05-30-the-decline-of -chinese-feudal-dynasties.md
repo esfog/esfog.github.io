@@ -4,7 +4,7 @@ title: '中国封建王朝的衰落'
 subtitle: '读《万历十五年》有感'
 date: 2017-05-30
 categories: 历史
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
+cover: '/assets/img/decline_of_chinese_fedual_dynasties/bg.jpeg'
 tags: 历史 明史 读书
 ---
 

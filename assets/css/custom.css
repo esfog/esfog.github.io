@@ -1,0 +1,10 @@
+/* 让 author-box 里头像和描述文字垂直居中 */
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.author-box .author-avatar {
+  flex-shrink: 0;
+}

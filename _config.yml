@@ -30,7 +30,7 @@ dash:
       color: yellow
       
   avatar_source: local
-  avatar_path: /public/avatar.jpg
+  avatar_path: /public/avatar-esfog-pixel.png
 
 # Build settings
 theme: jekyll-dash

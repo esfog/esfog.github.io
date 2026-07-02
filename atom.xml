@@ -1,81 +1,22 @@
-<!DOCTYPE html>
-<html class="direction--ltr"lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>bitbrain | Miguel is a software engineer and indie game developer currently based in the UK. He occasionally blogs about software design, continuous integration and game development with Godot Engine.</title>
-<meta name="generator" content="Jekyll v4.2.1" />
-<meta property="og:title" content="bitbrain" />
-<meta name="author" content="bitbrain" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Miguel is a software engineer and indie game developer currently based in the UK. He occasionally blogs about software design, continuous integration and game development with Godot Engine." />
-<meta property="og:description" content="Miguel is a software engineer and indie game developer currently based in the UK. He occasionally blogs about software design, continuous integration and game development with Godot Engine." />
-<link rel="canonical" href="https://bitbrain.github.io/atom.xml" />
-<meta property="og:url" content="https://bitbrain.github.io/atom.xml" />
-<meta property="og:site_name" content="bitbrain" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="bitbrain" />
-<script type="application/ld+json">
-{"description":"Miguel is a software engineer and indie game developer currently based in the UK. He occasionally blogs about software design, continuous integration and game development with Godot Engine.","url":"https://bitbrain.github.io/atom.xml","@type":"WebPage","headline":"bitbrain","author":{"@type":"Person","name":"bitbrain"},"@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <link rel="stylesheet" href="/assets/css/magnific-popup.css"><link type="application/atom+xml" rel="alternate" href="https://bitbrain.github.io/feed.xml" title="bitbrain" /><script src="https://code.jquery.com/jquery-3.2.0.min.js"></script> 
-  <script src="/assets/js/jquery.magnific-popup.js"></script>
-</head>
-<body><div class="site-header">
-  <div class="wrapper">
-    <a class="site-title" rel="author" href="/">bitbrain<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
-    <span class="social_links">
-        
-        
-        <a class="color-orange-hover" href="https://soundcloud.com/myrealityde"><i class="fab fa-soundcloud"></i></a>
-        
-        
-        
-        <a class="color-cyan-hover" href="https://twitter.com/bitbrain_"><i class="fab fa-twitter-square"></i></a>
-        
-        
-        
-        <a class="color-red-hover" href="https://bitbrain.itch.io"><i class="fab fa-itch-io"></i></a>
-        
-        
-        
-        <a class="color-purple-hover" href="https://www.twitch.tv/bitbrain_"><i class="fab fa-twitch"></i></a>
-        
-        
-        
-        <a class="color-red-hover" href="https://www.youtube.com/channel/UCZDjQltHRNiXIYXMBeLDleA"><i class="fab fa-youtube"></i></a>
-        
-        
-        
-        <a class="color-yellow-hover" href="https://github.com/bitbrain"><i class="fab fa-github-square"></i></a>
-        
-        
-    </span>
-  </div>
-</div>
-<main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>bitbrain</title>
- <link href="https://bitbrain.github.io/atom.xml" rel="self"/>
- <link href="https://bitbrain.github.io/"/>
- <updated>2021-12-24T01:11:40+00:00</updated>
- <id>https://bitbrain.github.io</id>
+ <title>esfog</title>
+ <link href="https://esfog.github.io/atom.xml" rel="self"/>
+ <link href="https://esfog.github.io/"/>
+ <updated>2026-07-02T10:26:09+00:00</updated>
+ <id>https://esfog.github.io</id>
  <author>
-   <name></name>
-   <email></email>
+   <name>esfog</name>
+   
  </author>
 
  
  <entry>
    <title>Workflow of releasing a gem-based Jekyll theme</title>
-   <link href="https://bitbrain.github.io/2021/10/05/workflow-of-releasing-gem-based-jekyll-theme.html"/>
+   <link href="https://esfog.github.io/2021/10/05/workflow-of-releasing-gem-based-jekyll-theme.html"/>
    <updated>2021-10-05T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2021/10/05/workflow-of-releasing-gem-based-jekyll-theme</id>
+   <id>https://esfog.github.io/2021/10/05/workflow-of-releasing-gem-based-jekyll-theme</id>
    <content type="html">&lt;p&gt;This &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;-based blog has been built with a custom theme created called &lt;a href=&quot;https://github.com/bitbrain/jekyll-dash&quot;&gt;jekyll-dash&lt;/a&gt;. Initially, I built this theme just to share it with others, however, more and more people started using it over the past few months.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/bitbrain/jekyll-dash&quot;&gt;&lt;img src=&quot;/public/media/jekyll-dash-logo.png&quot; alt=&quot;jekyll-dash-logo&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -90,7 +31,7 @@
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-dash&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Jekyll will automatically apply the theme if it is specified as a gem within &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem 'jekyll-dash'
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem &apos;jekyll-dash&apos;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Whenever I push a new version of the gem to the public rubygems repository, rebuilding my site would use the new changes and automatically include them - neat!&lt;/p&gt;
 
@@ -140,7 +81,7 @@
   &lt;span class=&quot;na&quot;&gt;api_key&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$RUBYGEMS_API_KEY&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;gem&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-dash&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;repo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bitbrain/jekyll-dash&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;There were a couple of issues with this approach:&lt;/p&gt;
@@ -178,18 +119,18 @@
   &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mukunku/tag-exists-action@v1.0.0&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tag-check&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; 
-    &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;v${{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;steps.gemspec_fetch.outputs.version&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;}}'&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;v${{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;steps.gemspec_fetch.outputs.version&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;}}&apos;&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;GITHUB_TOKEN&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${{ secrets.GH_CREDENTIALS }}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;This allows me then to apply an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if&lt;/code&gt; conditional on any other steps:&lt;/p&gt;
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;🔖Build tag&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${{ steps.tag-check.outputs.exists == 'false' }}&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${{ steps.tag-check.outputs.exists == &apos;false&apos; }}&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tag_version&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mathieudutour/github-tag-action@v5.6&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;github_token&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${{ secrets.GH_CREDENTIALS }}&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;default_bump&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;default_bump&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;custom_tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;${{ steps.gemspec_fetch.outputs.version }}&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;tag_prefix&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;v&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -198,11 +139,11 @@
 
 &lt;span class=&quot;nv&quot;&gt;SPEC_DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;parse-gemspec-cli &lt;span class=&quot;nv&quot;&gt;$INPUT_SPECFILE&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
 
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;::set-output name=name::&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SPEC_DATA&lt;/span&gt; | jq &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.name'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;::set-output name=description::&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SPEC_DATA&lt;/span&gt; | jq &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.description'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;::set-output name=summary::&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SPEC_DATA&lt;/span&gt; | jq &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.summary'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;::set-output name=version::&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SPEC_DATA&lt;/span&gt; | jq &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.version'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;::set-output name=homepage::&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SPEC_DATA&lt;/span&gt; | jq &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'.homepage'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;::set-output name=name::&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SPEC_DATA&lt;/span&gt; | jq &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;.name&apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;::set-output name=description::&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SPEC_DATA&lt;/span&gt; | jq &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;.description&apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;::set-output name=summary::&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SPEC_DATA&lt;/span&gt; | jq &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;.summary&apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;::set-output name=version::&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SPEC_DATA&lt;/span&gt; | jq &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;.version&apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;::set-output name=homepage::&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$SPEC_DATA&lt;/span&gt; | jq &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;.homepage&apos;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;This new workflow allows me to build and test every single commit and it gives me full control of when I want to release a new gem: I simply bump the version of the gem manually within the .gemspec and Github will do the rest for me!&lt;/p&gt;
 </content>
@@ -210,9 +151,9 @@
  
  <entry>
    <title>Host your own blog with Jekyll and Github Pages</title>
-   <link href="https://bitbrain.github.io/2021/10/03/host-your-own-blog-for-free-with-custom-domain.html"/>
+   <link href="https://esfog.github.io/2021/10/03/host-your-own-blog-for-free-with-custom-domain.html"/>
    <updated>2021-10-03T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2021/10/03/host-your-own-blog-for-free-with-custom-domain</id>
+   <id>https://esfog.github.io/2021/10/03/host-your-own-blog-for-free-with-custom-domain</id>
    <content type="html">&lt;p&gt;Github allows you to host your own websites via &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;. With a tool called &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; you are able to create pages for your website written in &lt;a href=&quot;https://www.markdownguide.org/basic-syntax/&quot;&gt;Markdown&lt;/a&gt;. Let us explore how we can set up our own blog hosted on Github Pages. Additionally, let us configure a custom domain for our website! This very blog is hosted exactly that way!&lt;/p&gt;
 
 &lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h2&gt;
@@ -333,9 +274,9 @@
  
  <entry>
    <title>Becoming a gamedev Youtuber</title>
-   <link href="https://bitbrain.github.io/2020/12/29/devlog-youtubers.html"/>
+   <link href="https://esfog.github.io/2020/12/29/devlog-youtubers.html"/>
    <updated>2020-12-29T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2020/12/29/devlog-youtubers</id>
+   <id>https://esfog.github.io/2020/12/29/devlog-youtubers</id>
    <content type="html">&lt;p&gt;For many years, I remained quiet and built &lt;a href=&quot;https://bitbrain.itch.io&quot;&gt;a lot of little games&lt;/a&gt; just for fun. I may have shared progress on them &lt;a href=&quot;https://twitter.com/bitbrain_&quot;&gt;on Twitter&lt;/a&gt; but that’s it. To be completely honest, I was afraid people might not like what I am doing or that my work &lt;em&gt;is not good enough&lt;/em&gt; for the world to see.&lt;/p&gt;
 
 &lt;p&gt;Finally, after years of hiding, I decided this year &lt;a href=&quot;https://www.youtube.com/bitbraindev&quot;&gt;to become a Youtuber&lt;/a&gt;! Before I go into details, let me first talk a little bit about Youtube a bit, especially the game development section.&lt;/p&gt;
@@ -399,9 +340,9 @@
  
  <entry>
    <title>How to publish your Godot Game to itch.io via Github actions</title>
-   <link href="https://bitbrain.github.io/2020/08/01/publish-godot-game-to-itchio.html"/>
+   <link href="https://esfog.github.io/2020/08/01/publish-godot-game-to-itchio.html"/>
    <updated>2020-08-01T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2020/08/01/publish-godot-game-to-itchio</id>
+   <id>https://esfog.github.io/2020/08/01/publish-godot-game-to-itchio</id>
    <content type="html">&lt;p&gt;Manually building and uploading your &lt;a href=&quot;https://godotengine.org&quot;&gt;Godot&lt;/a&gt; games can be painful and time-consuming. In this tutorial am going to show you how to automate the process:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -509,7 +450,7 @@ If you want to run new workflows, you’ll need to set up a different PAT and ad
           &lt;span class=&quot;na&quot;&gt;relative_project_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;.&lt;/span&gt;
         &lt;span class=&quot;na&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
           &lt;span class=&quot;na&quot;&gt;GITHUB_TOKEN&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${{ secrets.GH_CREDENTIALS }}&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;ACTIONS_ALLOW_UNSECURE_COMMANDS&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;true'&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;ACTIONS_ALLOW_UNSECURE_COMMANDS&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;true&apos;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Let’s have a look into the steps. First, we define when the action should get triggered. If you do not want to create a new release
 everytime you push, replace the branch with a different branch, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;release&lt;/code&gt;&lt;/p&gt;
@@ -565,9 +506,9 @@ everytime you push, replace the branch with a different branch, e.g. &lt;code cl
  
  <entry>
    <title>Building a game from scratch in 48 hours</title>
-   <link href="https://bitbrain.github.io/2020/04/08/minibeansjam5-building-a-game.html"/>
+   <link href="https://esfog.github.io/2020/04/08/minibeansjam5-building-a-game.html"/>
    <updated>2020-04-08T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2020/04/08/minibeansjam5-building-a-game</id>
+   <id>https://esfog.github.io/2020/04/08/minibeansjam5-building-a-game</id>
    <content type="html">&lt;p&gt;&lt;a href=&quot;https://itch.io/jam/minibeansjam5&quot;&gt;&lt;img src=&quot;/public/media/minibeansjam5.gif&quot; alt=&quot;minibeansjam5&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Between Friday 3rd-5th April 2020, German &lt;a href=&quot;https://rocketbeans.tv/&quot;&gt;Rocketbeans TV&lt;/a&gt; hosted &lt;a href=&quot;https://itch.io/jam/minibeansjam5&quot;&gt;minibeansjam 5&lt;/a&gt;, a 48 hour gamejam. I submitted a game and managed to finish most bits right in time.&lt;/p&gt;
@@ -745,9 +686,9 @@ everytime you push, replace the branch with a different branch, e.g. &lt;code cl
  
  <entry>
    <title>Creating braingdx: orthogonal tilemaps</title>
-   <link href="https://bitbrain.github.io/2019/07/08/creating-braingdx-orthogonal-tilemaps.html"/>
+   <link href="https://esfog.github.io/2019/07/08/creating-braingdx-orthogonal-tilemaps.html"/>
    <updated>2019-07-08T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2019/07/08/creating-braingdx-orthogonal-tilemaps</id>
+   <id>https://esfog.github.io/2019/07/08/creating-braingdx-orthogonal-tilemaps</id>
    <content type="html">&lt;p&gt;Welcome to my new blog series where I talk in more detail about a personal project of mine called &lt;a href=&quot;https://github.com/bitbrain/braingdx&quot;&gt;braingdx&lt;/a&gt;. It builds upon &lt;a href=&quot;https://libgdx.badlogicgames.com&quot;&gt;libgdx&lt;/a&gt; and extends it &lt;a href=&quot;https://github.com/bitbrain/braingdx#features&quot;&gt;with game engine features&lt;/a&gt; to avoid writing boilerplate-code.&lt;/p&gt;
 
 &lt;p&gt;In this part I will present how the tiledmap integration works in &lt;strong&gt;braingdx&lt;/strong&gt; compared to &lt;strong&gt;libgdx&lt;/strong&gt; itself. As mentioned before, this framework uses &lt;strong&gt;libgdx&lt;/strong&gt; and its APIs in order to integrate tiled maps.&lt;/p&gt;
@@ -910,9 +851,9 @@ Instead, you have to write your own z-index ordering logic. Don’t worry though
  
  <entry>
    <title>Game design: one finger to rule them all</title>
-   <link href="https://bitbrain.github.io/2019/05/10/one-finger-to-rule-them-all.html"/>
+   <link href="https://esfog.github.io/2019/05/10/one-finger-to-rule-them-all.html"/>
    <updated>2019-05-10T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2019/05/10/one-finger-to-rule-them-all</id>
+   <id>https://esfog.github.io/2019/05/10/one-finger-to-rule-them-all</id>
    <content type="html">&lt;p&gt;Everyone owns a smartphone nowadays. People are swiping within their apps up and down, left and right, panning in and double tap  whenever they get the opportunity. What people definitely don’t want is having to use more than a single finger. When looking at popular apps like Instagram, Twitter or Boost, the entire UX flow is designed for single-hand use. Game developers such as &lt;a href=&quot;https://king.com&quot;&gt;King&lt;/a&gt; have taken that principle to another level for a simple reason: &lt;strong&gt;Accessibility&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;If you want your game to be played by the masses, it needs to be accessible. In order for a game to be accessible, it needs to be supported by the hardware and the user should not get confused how to actually play the game. Many mobile games have long and annoying tutorials, explaining the complex UI and input methods such as buttons and virtual HUDs. Personally, I always disliked the fact that controls are being emulated on smartphones via HUDs like this:&lt;/p&gt;
@@ -987,9 +928,9 @@ Instead, you have to write your own z-index ordering logic. Don’t worry though
  
  <entry>
    <title>How to automatically publish your game to itch.io</title>
-   <link href="https://bitbrain.github.io/2019/02/18/automatically-publish-games-to-itchio.html"/>
+   <link href="https://esfog.github.io/2019/02/18/automatically-publish-games-to-itchio.html"/>
    <updated>2019-02-18T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2019/02/18/automatically-publish-games-to-itchio</id>
+   <id>https://esfog.github.io/2019/02/18/automatically-publish-games-to-itchio</id>
    <content type="html">&lt;h1 id=&quot;motivation&quot;&gt;Motivation&lt;/h1&gt;
 
 &lt;blockquote&gt;
@@ -1146,9 +1087,9 @@ Done.
  
  <entry>
    <title>Continuous Delivery with Travis and Github</title>
-   <link href="https://bitbrain.github.io/2018/07/15/cd-with-travis.html"/>
+   <link href="https://esfog.github.io/2018/07/15/cd-with-travis.html"/>
    <updated>2018-07-15T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2018/07/15/cd-with-travis</id>
+   <id>https://esfog.github.io/2018/07/15/cd-with-travis</id>
    <content type="html">&lt;p&gt;Some years ago I started working on a project called &lt;a href=&quot;https://github.com/bitbrain/braingdx&quot;&gt;braingdx&lt;/a&gt;. It is a gamejam framework based on &lt;a href=&quot;https://libgdx.badlogicgames.com/&quot;&gt;libgdx&lt;/a&gt;, fully written in &lt;strong&gt;Java&lt;/strong&gt;. At some point I decided to make the artifact available for a broader audience. As a result I required a deployment flow to automatically upload the &lt;strong&gt;.jar&lt;/strong&gt; files to an artifactory of my choice.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-silly-approach&quot;&gt;The silly approach&lt;/h1&gt;
@@ -1327,8 +1268,8 @@ git config &lt;span class=&quot;nt&quot;&gt;--global&lt;/span&gt; user.name &lt;
 git clone &lt;span class=&quot;nt&quot;&gt;--quiet&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--branch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;master https://&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GITHUB_TOKEN&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;@github.com/bitbrain/braingdx
 
 &lt;span class=&quot;c&quot;&gt;# Replacing line endings in body&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-E&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;':a;N;$!ba;s/\r{0,1}\n/\\n/g'&lt;/span&gt; &amp;lt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CH_TEXT&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'{&quot;tag_name&quot;:&quot;'&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CH_VERSION&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;,&quot;target_commitish&quot;:&quot;'&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TRAVIS_BRANCH&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;,&quot;name&quot;:&quot;Version '&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CH_VERSION&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;,&quot;body&quot;:&quot;'&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$body&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&quot;,&quot;draft&quot;:false,&quot;prerelease&quot;:false}'&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-E&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;:a;N;$!ba;s/\r{0,1}\n/\\n/g&apos;&lt;/span&gt; &amp;lt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CH_TEXT&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;{&quot;tag_name&quot;:&quot;&apos;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CH_VERSION&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&quot;,&quot;target_commitish&quot;:&quot;&apos;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$TRAVIS_BRANCH&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&quot;,&quot;name&quot;:&quot;Version &apos;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$CH_VERSION&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&quot;,&quot;body&quot;:&quot;&apos;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$body&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;&quot;,&quot;draft&quot;:false,&quot;prerelease&quot;:false}&apos;&lt;/span&gt;
 
 curl &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; bitbrain:&lt;span class=&quot;nv&quot;&gt;$GITHUB_TOKEN&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
@@ -1393,9 +1334,9 @@ git push &lt;span class=&quot;nt&quot;&gt;-fq&lt;/span&gt; origin gh-pages &lt;s
  
  <entry>
    <title>Level Generation in Mindmazer</title>
-   <link href="https://bitbrain.github.io/2017/09/03/level-generation-in-mindmazer.html"/>
+   <link href="https://esfog.github.io/2017/09/03/level-generation-in-mindmazer.html"/>
    <updated>2017-09-03T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2017/09/03/level-generation-in-mindmazer</id>
+   <id>https://esfog.github.io/2017/09/03/level-generation-in-mindmazer</id>
    <content type="html">&lt;p&gt;Today I want to talk about my project &lt;a href=&quot;https://github.com/bitbrain/mindmazer&quot;&gt;mindmazer&lt;/a&gt;. In this simple 2D puzzle game the player has to remember a certain path to progress to the next stage. When starting this project I had to decide if I give the player a static list of predefined levels. After some time I decided against it and went for a procedural generation approach. In this article I am going to explain how these levels are generated.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-level&quot;&gt;The Level&lt;/h1&gt;
@@ -1453,9 +1394,9 @@ x x
  
  <entry>
    <title>Why I still use Java for gamedev</title>
-   <link href="https://bitbrain.github.io/2017/08/17/why-I-still-use-java-for-gamedev.html"/>
+   <link href="https://esfog.github.io/2017/08/17/why-I-still-use-java-for-gamedev.html"/>
    <updated>2017-08-17T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2017/08/17/why-I-still-use-java-for-gamedev</id>
+   <id>https://esfog.github.io/2017/08/17/why-I-still-use-java-for-gamedev</id>
    <content type="html">&lt;p&gt;There is an technology, running on billions of devices every single day: Java.
 Many developers (beardy hipsters) claim this technology belongs to the past, game engines like &lt;a href=&quot;https://unity3d.com/&quot;&gt;Unity&lt;/a&gt; and &lt;a href=&quot;https://www.unrealengine.com/en-US/what-is-unreal-engine-4&quot;&gt;Unreal Engine&lt;/a&gt; are the future! Still, there is one man who hasn’t lost hope. Every single day he is building real games, not written in C# or Javascript. Not even Python or scientific C++. He is just using &lt;a href=&quot;https://www.java.com/en/&quot;&gt;Java&lt;/a&gt;. And this person is me.&lt;/p&gt;
 
@@ -1499,7 +1440,7 @@ Many developers (beardy hipsters) claim this technology belongs to the past, gam
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hey&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;You didn't greet me! WOW!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;You didn&apos;t greet me! WOW!&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -1568,9 +1509,9 @@ Many developers (beardy hipsters) claim this technology belongs to the past, gam
  
  <entry>
    <title>Terminal Setup on MacOS</title>
-   <link href="https://bitbrain.github.io/2017/08/16/terminal-setup-on-macos.html"/>
+   <link href="https://esfog.github.io/2017/08/16/terminal-setup-on-macos.html"/>
    <updated>2017-08-16T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2017/08/16/terminal-setup-on-macos</id>
+   <id>https://esfog.github.io/2017/08/16/terminal-setup-on-macos</id>
    <content type="html">&lt;p&gt;&lt;img src=&quot;/public/media/macos-terminal-example.png&quot; alt=&quot;terminal-example&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Today I would like to share with you my current terminal setup. It basically consists of the following parts:&lt;/p&gt;
@@ -1622,9 +1563,9 @@ Many developers (beardy hipsters) claim this technology belongs to the past, gam
  
  <entry>
    <title>New blog</title>
-   <link href="https://bitbrain.github.io/2017/08/15/new-blog.html"/>
+   <link href="https://esfog.github.io/2017/08/15/new-blog.html"/>
    <updated>2017-08-15T00:00:00+00:00</updated>
-   <id>https://bitbrain.github.io/2017/08/15/new-blog</id>
+   <id>https://esfog.github.io/2017/08/15/new-blog</id>
    <content type="html">&lt;p&gt;Laziness can be a disease. Unfortunately my brain decided to just stop writing blog articles about stuff I do. This does not mean that I ever stopped. Oh hell no, I even did too much since I last blogged about my life. Things changed drastically in the last 12 months: moving to Central London to work fulltime, having two cats as well as enjoying life more than ever.&lt;/p&gt;
 
 &lt;p&gt;But let’s not talk about boring stuff for now, what can you guys expect on here?&lt;/p&gt;
@@ -1645,83 +1586,3 @@ Many developers (beardy hipsters) claim this technology belongs to the past, gam
  
 
 </feed>
-
-
-      </div>
-    </main><footer class="site-footer">
-  <div class="wrapper">
-    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
-    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
-    <label for="theme-toggle" class="toggle">
-    <span class="toggle__handler">
-      <span class="crater crater--1"></span>
-      <span class="crater crater--2"></span>
-      <span class="crater crater--3"></span>
-    </span>
-        <span class="star star--1"></span>
-        <span class="star star--2"></span>
-        <span class="star star--3"></span>
-        <span class="star star--4"></span>
-        <span class="star star--5"></span>
-        <span class="star star--6"></span>
-    </label>
-</div>
-<script type="text/javascript">
-const theme = localStorage.getItem('theme');
-
-if (theme === "light") {
-    document.documentElement.setAttribute('data-theme', 'light');
-} else {
-    document.documentElement.setAttribute('data-theme', 'dark');
-}
-const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
-
-function activateDarkTheme() {
-    document.getElementById('theme-toggle').checked = true;
-    document.documentElement.setAttribute('data-theme', 'dark');
-    document.documentElement.classList.add('theme--dark');
-    document.documentElement.classList.remove('theme--light');
-	document.getElementById("theme-toggle").className = 'light';
-	window.localStorage.setItem('theme', 'dark');
-}
-
-function activateLightTheme() {
-    document.getElementById('theme-toggle').checked = false;
-    document.documentElement.setAttribute('data-theme', 'light');
-    document.documentElement.classList.add('theme--light');
-    document.documentElement.classList.remove('theme--dark');
-	document.getElementById("theme-toggle").className = 'dark';
-	window.localStorage.setItem('theme', 'light');
-}
-
-if (theme === "dark") {
-    activateDarkTheme();
-} else if (theme === "light") {
-    activateLightTheme();
-} else if  (userPrefers === "light") {
-    activateDarkTheme();
-} else {
-    activateDarkTheme();
-}
-
-function modeSwitcher() {
-	let currentMode = document.documentElement.getAttribute('data-theme');
-	if (currentMode === "dark") {
-	    activateLightTheme();
-	} else {
-	    activateDarkTheme();
-	}
-}
-</script></div>
-  </div>
-</footer>
-
-
-<script>
-      window.FontAwesomeConfig = {
-        searchPseudoElements: true
-      }
-    </script>
-  </body>
-
-</html>

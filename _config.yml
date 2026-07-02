@@ -3,8 +3,7 @@ url: https://esfog.github.io
 author:
   name: esfog
   email:
-description: > # this means to ignore newlines until "show_exerpts:"
-  esfog's personal blog.
+description: "esfog的个人博客，持续学习，不断成长"
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 5

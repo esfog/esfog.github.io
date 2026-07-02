@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.rubydoc.info)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "PowerShell(if \\(Test-Path _site/index.html\\) { Get-ChildItem _site -Depth 2 -Directory | ForEach-Object { Write-Output $_.FullName } } else { Write-Output \"_site not found\" })",
+      "WebFetch(domain:esfog.github.io)",
+      "PowerShell($response = Invoke-WebRequest -Uri \"https://esfog.github.io\" -UseBasicParsing -TimeoutSec 15; $response.Content | Out-File -Encoding utf8 .temp-site.html; Write-Output \"File saved, $\\(\\($response.Content.Length\\)\\) chars\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path assets\\\\css)",
+      "PowerShell(# Delete all old post images; Remove-Item -Recurse -Force public/media; Write-Output \"Deleted public/media/\"; # Delete duplicate avatars; Remove-Item public/avatar.gif -Force; Remove-Item public/avatar.jpg -Force; Remove-Item public/media/avatar.jpg -Force -ErrorAction SilentlyContinue; Write-Output \"Deleted duplicate avatars\"; # Show what remains; Write-Output \"`nRemaining files in public/:\"; Get-ChildItem public -Recurse | ForEach-Object { Write-Output \"  $\\($_.FullName.Replace\\(\"$pwd\\\\\", ''\\)\\)\" })"
+    ]
+  }
+}

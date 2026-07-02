@@ -1,11 +1,11 @@
-name: Deploy to Github Pages 
+name: Deploy to Github Pages
 
 on:
   push:
     branches:
-      - master 
+      - main
   schedule:
-      - cron:  '0 0 * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   github-pages:

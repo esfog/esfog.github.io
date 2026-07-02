@@ -1,10 +1,10 @@
-title: bitbrain
-url: https://bitbrain.github.io
-author: bitbrain
-email: miguel-gonzalez@gmx.de
+title: esfog
+url: https://esfog.github.io
+author:
+  name: esfog
+  email:
 description: > # this means to ignore newlines until "show_exerpts:"
-  Miguel is a software engineer and indie game developer currently based in the UK.
-  <br/>He occasionally blogs about software design, continuous integration and game development with Godot Engine.
+  esfog's personal blog.
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 5
@@ -20,27 +20,12 @@ dash:
   date_format: "%b %-d, %Y"
 
   disqus:
-    shortname: bitbrain-github-io
+    shortname:
 
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
-    - url: https://soundcloud.com/myrealityde
-      icon: soundcloud
-      color: orange
-    - url: https://twitter.com/bitbrain_
-      icon: twitter-square
-      color: cyan
-    - url: https://bitbrain.itch.io
-      icon: itch-io
-      color: red
-    - url: https://www.twitch.tv/bitbrain_
-      icon: twitch
-      color: purple
-    - url: https://www.youtube.com/channel/UCZDjQltHRNiXIYXMBeLDleA
-      icon: youtube
-      color: red
-    - url: https://github.com/bitbrain
+    - url: https://github.com/esfog
       icon: github-square
       color: yellow
       
@@ -53,5 +38,3 @@ theme: jekyll-dash
 plugins:
   - liquid-md5
   - jekyll/tagging
-
-

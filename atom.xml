@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: null
 ---
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -12,7 +12,7 @@ layout: page
  <id>{{ site.url }}</id>
  <author>
    <name>{{ site.author.name }}</name>
-   <email>{{ site.author.email }}</email>
+   {% if site.author.email %}<email>{{ site.author.email }}</email>{% endif %}
  </author>
 
  {% for post in site.posts %}

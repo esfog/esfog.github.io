@@ -1,5 +1,238 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://esfog.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://esfog.github.io/" rel="alternate" type="text/html" /><updated>2026-07-02T11:10:08+00:00</updated><id>https://esfog.github.io/feed.xml</id><title type="html">esfog</title><subtitle>esfog&apos;s personal blog.
-</subtitle><author><name>esfog</name></author><entry><title type="html">Workflow of releasing a gem-based Jekyll theme</title><link href="https://esfog.github.io/2021/10/05/workflow-of-releasing-gem-based-jekyll-theme.html" rel="alternate" type="text/html" title="Workflow of releasing a gem-based Jekyll theme" /><published>2021-10-05T00:00:00+00:00</published><updated>2021-10-05T00:00:00+00:00</updated><id>https://esfog.github.io/2021/10/05/workflow-of-releasing-gem-based-jekyll-theme</id><content type="html" xml:base="https://esfog.github.io/2021/10/05/workflow-of-releasing-gem-based-jekyll-theme.html"><![CDATA[<p>This <a href="https://jekyllrb.com/">Jekyll</a>-based blog has been built with a custom theme created called <a href="https://github.com/bitbrain/jekyll-dash">jekyll-dash</a>. Initially, I built this theme just to share it with others, however, more and more people started using it over the past few months.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://esfog.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://esfog.github.io/" rel="alternate" type="text/html" /><updated>2026-07-02T12:40:46+00:00</updated><id>https://esfog.github.io/feed.xml</id><title type="html">esfog</title><subtitle>esfog&apos;s personal blog.
+</subtitle><author><name>esfog</name></author><entry><title type="html">Atari 强化学习笔记 (Day1) - 环境搭建与 GPU 验证</title><link href="https://esfog.github.io/2026/07/01/atari-reinforcement-learning-day1.html" rel="alternate" type="text/html" title="Atari 强化学习笔记 (Day1) - 环境搭建与 GPU 验证" /><published>2026-07-01T00:00:00+00:00</published><updated>2026-07-01T00:00:00+00:00</updated><id>https://esfog.github.io/2026/07/01/atari-reinforcement-learning-day1</id><content type="html" xml:base="https://esfog.github.io/2026/07/01/atari-reinforcement-learning-day1.html"><![CDATA[<h1 id="day1-202671">Day1 2026.7.1</h1>
+
+<p><strong>开发环境：</strong> Python 3.13.9 / GPU Nvidia 5060 Laptop</p>
+
+<hr />
+
+<h2 id="一环境准备和验证由豆包ai制定我进行了根据实际验证情况的补充修正">一、环境准备和验证（由豆包AI制定，我进行了根据实际验证情况的补充修正）</h2>
+
+<h3 id="步骤-1下载并安装基础软件顺序不能乱">步骤 1：下载并安装基础软件（顺序不能乱）</h3>
+
+<p><strong>安装 NVIDIA 最新显卡驱动</strong>（我更新了驱动，CMD 返回 <code class="language-plaintext highlighter-rouge">NVIDIA-SMI 610.62  KMD Version: 610.62  CUDA UMD Version: 13.3</code>）</p>
+
+<ul>
+  <li>网址：https://www.nvidia.cn/Download/index.aspx</li>
+  <li>选型：GeForce RTX 5060 Laptop GPU，对应你的 Windows 系统</li>
+  <li>安装完成后重启电脑，打开 CMD 输入 <code class="language-plaintext highlighter-rouge">nvidia-smi</code>，确认 CUDA Version ≥ 12.6</li>
+</ul>
+
+<p><strong>安装 Python 3.11 稳定版</strong>（我本地已经有了 3.13 了，没换）</p>
+
+<ul>
+  <li>官网：https://www.python.org/downloads/release/python-311/</li>
+  <li>安装关键：勾选 “Add Python to PATH”</li>
+</ul>
+
+<p><strong>安装 VS Code</strong></p>
+
+<ul>
+  <li>官网：https://code.visualstudio.com/</li>
+  <li>安装后在扩展市场安装：Python、Pylance 两个插件</li>
+</ul>
+
+<h3 id="步骤-2创建专用-python-虚拟环境cmdpowershell-执行">步骤 2：创建专用 Python 虚拟环境（CMD/PowerShell 执行）</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 创建独立环境，存放 RL 游戏 AI 所有依赖（注意执行前切换到准备好的目录）</span>
+python <span class="nt">-m</span> venv rl_atari
+
+<span class="c"># 激活环境（激活后前缀会出现 (rl_atari)）（不要用 PowerShell，默认权限不够）</span>
+rl_atari<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+
+<span class="c"># 更新 pip</span>
+python <span class="nt">-m</span> pip <span class="nb">install</span> <span class="nt">--upgrade</span> pip
+</code></pre></div></div>
+
+<h3 id="步骤-3一键安装全套依赖复制整段运行">步骤 3：一键安装全套依赖（复制整段运行）</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. GPU 版 PyTorch CUDA 12.6（适配 5060）</span>
+<span class="c"># pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126  （实际用了发现不行，5060 实际跑不了 12.6）</span>
+<span class="c"># 如果已经安装了没法直接覆盖，需要先卸载：</span>
+<span class="c"># pip uninstall torch torchvision torchaudio -y</span>
+pip <span class="nb">install </span>torch torchvision <span class="nt">--index-url</span> https://download.pytorch.org/whl/cu132
+
+<span class="c"># 2. Gymnasium + Atari 模拟器底层 ALE</span>
+pip <span class="nb">install</span> <span class="s2">"gymnasium[atari]"</span>
+
+<span class="c"># 3. Stable Baselines3（封装 DQN/PPO，快速出效果）</span>
+pip <span class="nb">install </span>stable-baselines3[extra]
+
+<span class="c"># 4. 图像处理、绘图工具</span>
+pip <span class="nb">install </span>numpy opencv-python matplotlib
+</code></pre></div></div>
+
+<h3 id="步骤-4验证-gpu-是否可用进入-python-交互窗口">步骤 4：验证 GPU 是否可用（进入 Python 交互窗口）</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">python</span>
+<span class="kn">import</span> <span class="n">torch</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">is_available</span><span class="p">())</span>          <span class="c1"># 输出 True → 显卡加速正常；False 需要切换笔记本独显模式、重装驱动
+</span><span class="nf">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">get_device_capability</span><span class="p">())</span>  <span class="c1"># 输出 (12, 0) 代表识别你的 RTX5060 算力
+</span></code></pre></div></div>
+
+<h3 id="步骤-5新建测试代码验证-atari-模拟器可视化test_pongpy">步骤 5：新建测试代码，验证 Atari 模拟器可视化（test_pong.py）</h3>
+
+<blockquote>
+  <p><strong>注意：</strong> 在实际用 VSCode 编写运行 Python 之前，需要让 VSCode 识别你的 Python 虚拟环境。在 VSCode 里 <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> 输入 <code class="language-plaintext highlighter-rouge">Python: Select Interpreter</code>，然后将之前准备好的 <code class="language-plaintext highlighter-rouge">rl_atari\Scripts\python.exe</code> 关联上。可以通过右下角是否显示 <code class="language-plaintext highlighter-rouge">rl_atari</code> 来确认是否生效。</p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">gymnasium</span> <span class="k">as</span> <span class="n">gym</span>
+<span class="kn">import</span> <span class="n">ale_py</span>
+<span class="n">gym</span><span class="p">.</span><span class="nf">register_envs</span><span class="p">(</span><span class="n">ale_py</span><span class="p">)</span>
+
+<span class="c1"># human 模式弹出游戏窗口
+</span><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="p">.</span><span class="nf">make</span><span class="p">(</span><span class="sh">"</span><span class="s">ALE/Pong-v5</span><span class="sh">"</span><span class="p">,</span> <span class="n">render_mode</span><span class="o">=</span><span class="sh">"</span><span class="s">human</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="nf">reset</span><span class="p">()</span>
+
+<span class="c1"># 随机操作 1000 帧测试画面
+</span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">action</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="n">action_space</span><span class="p">.</span><span class="nf">sample</span><span class="p">()</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">terminated</span><span class="p">,</span> <span class="n">truncated</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="nf">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">terminated</span> <span class="ow">or</span> <span class="n">truncated</span><span class="p">:</span>
+        <span class="n">obs</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="nf">reset</span><span class="p">()</span>
+<span class="n">env</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong>验收标准：</strong> 弹出乒乓球游戏窗口，挡板自动随机移动，无报错。</p>
+
+<h3 id="步骤-6测试-sb3-封装-dqn-最简训练-demo核心工具验证sb3_demopy">步骤 6：测试 SB3 封装 DQN 最简训练 Demo（核心工具验证）（sb3_demo.py）</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">gymnasium</span> <span class="k">as</span> <span class="n">gym</span>
+<span class="kn">from</span> <span class="n">stable_baselines3</span> <span class="kn">import</span> <span class="n">DQN</span>
+<span class="kn">from</span> <span class="n">stable_baselines3.common.atari_wrappers</span> <span class="kn">import</span> <span class="n">AtariWrapper</span>
+<span class="kn">import</span> <span class="n">ale_py</span>
+<span class="n">gym</span><span class="p">.</span><span class="nf">register_envs</span><span class="p">(</span><span class="n">ale_py</span><span class="p">)</span>
+
+<span class="c1"># 1. 创建原生游戏环境
+</span><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="p">.</span><span class="nf">make</span><span class="p">(</span><span class="sh">"</span><span class="s">ALE/Pong-v5</span><span class="sh">"</span><span class="p">,</span> <span class="n">render_mode</span><span class="o">=</span><span class="sh">"</span><span class="s">human</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># 2. 套 Atari 标准包装器：灰度、裁剪、缩放 84×84、4 帧堆叠，大幅度减小观测尺寸
+</span><span class="n">env</span> <span class="o">=</span> <span class="nc">AtariWrapper</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+<span class="c1"># 3. 调低回放池容量，避免爆内存，RTX5060 Laptop 直接用这个参数
+</span><span class="n">model</span> <span class="o">=</span> <span class="nc">DQN</span><span class="p">(</span>
+    <span class="sh">"</span><span class="s">CnnPolicy</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">env</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">buffer_size</span><span class="o">=</span><span class="mi">80000</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-4</span>
+<span class="p">)</span>
+<span class="c1"># 少量步数测试连通性
+</span><span class="n">model</span><span class="p">.</span><span class="nf">learn</span><span class="p">(</span><span class="n">total_timesteps</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+<span class="n">model</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="sh">"</span><span class="s">pong_test_model</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">env</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>运行后控制台打印训练日志，窗口同步显示游戏画面，代表 SB3 完全可用。</p>
+
+<p><strong>我本机训练日志（得等一会）：</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| rollout/            |          |
+|    ep_len_mean      | 213      |
+|    ep_rew_mean      | -21      |
+|    exploration_rate | 0.838    |
+| time/               |          |
+|    episodes         | 4        |
+|    fps              | 3        |
+|    time_elapsed     | 235      |
+|    total_timesteps  | 851      |
+| train/              |          |
+|    learning_rate    | 0.0001   |
+|    loss             | 0.0395   |
+|    n_updates        | 187      |
+</code></pre></div></div>
+
+<h3 id="步骤-7可选附加测试手动操控游戏manual_testpy">步骤 7：可选附加测试（手动操控游戏）（manual_test.py）</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">gymnasium.utils.play</span> <span class="kn">import</span> <span class="n">play</span>
+<span class="kn">import</span> <span class="n">gymnasium</span> <span class="k">as</span> <span class="n">gym</span>
+<span class="kn">import</span> <span class="n">ale_py</span>
+<span class="n">gym</span><span class="p">.</span><span class="nf">register_envs</span><span class="p">(</span><span class="n">ale_py</span><span class="p">)</span>
+
+<span class="c1"># 关键：render_mode 改成 rgb_array
+</span><span class="n">env</span> <span class="o">=</span> <span class="n">gym</span><span class="p">.</span><span class="nf">make</span><span class="p">(</span><span class="sh">"</span><span class="s">ALE/Breakout-v5</span><span class="sh">"</span><span class="p">,</span> <span class="n">render_mode</span><span class="o">=</span><span class="sh">"</span><span class="s">rgb_array</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">play</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>键盘直接操控打砖块，直观理解游戏动作空间。</p>
+
+<hr />
+
+<h2 id="二今晚完成这套操作你能收获什么由豆包ai制定">二、今晚完成这套操作，你能收获什么（由豆包AI制定）</h2>
+
+<ol>
+  <li><strong>完整可复用、GPU 加速的强化学习专用开发环境</strong>，后续两周所有 RL 代码都在此环境运行</li>
+  <li><strong>确认 RTX5060 显卡 CUDA 正常工作</strong>，显存、算力满足 Atari 视觉 DQN 训练需求</li>
+  <li><strong>跑通两条核心管线：</strong>
+    <ul>
+      <li>Gym 原生模拟器：画面、动作、奖励、游戏结束整套交互闭环</li>
+      <li>SB3 封装 DQN：一行 CNN 策略即可基于像素画面训练 AI</li>
+    </ul>
+  </li>
+  <li><strong>验证三件核心工具全部无兼容 bug：</strong> Python 3.11、Gymnasium (ALE)、Stable Baselines3</li>
+  <li><strong>建立直观视觉感受：</strong> 亲眼看到 AI 读取游戏画面并输出操作，建立「画面输入 → 网络 → 动作输出」全局认知</li>
+  <li><strong>掌握虚拟环境创建、库安装、代码运行等基础 Python 操作</strong>，弥补你 Python 零基础短板</li>
+</ol>
+
+<hr />
+
+<h2 id="三为什么必须今晚做完对后续学习的支撑作用对应你两周-gym-学习计划由豆包ai制定">三、为什么必须今晚做完，对后续学习的支撑作用（对应你两周 Gym 学习计划）（由豆包AI制定）</h2>
+
+<p><strong>1. 消除环境干扰，后续只专注算法逻辑</strong></p>
+
+<p>如果今晚不搭好，明天开始学 MDP、DQN 理论时，会频繁被安装报错、CUDA 失效、库版本冲突打断思路；你 Python 零基础，环境问题会大量占用理论学习时间。</p>
+
+<p><strong>2. SB3 是第一周核心学习载体</strong></p>
+
+<p>第一周前 7 天的核心实操全部依赖 SB3：快速训练 Pong / 打砖块、调参、观察奖励收敛。今晚验证 SB3 可用，明天可以直接上手训练、观察 AI 变强，不用额外花半天修复工具。</p>
+
+<p><strong>3. 模拟器可视化是理解理论的直观载体</strong></p>
+
+<p>明天学习 MDP、状态 S、动作 A、奖励 R 时，你可以随时弹出 Pong 窗口对照：</p>
+
+<ul>
+  <li>画面像素 = 状态 S</li>
+  <li>左右移动按键 = 动作 A</li>
+  <li>得分增减 = 奖励 R</li>
+</ul>
+
+<p>没有今晚搭建好的可视化窗口，抽象公式很难结合游戏场景理解。</p>
+
+<p><strong>4. 为第二周手写原生 DQN 做底层验证基准</strong></p>
+
+<p>第二周你会抛弃 SB3、自己手写 CNN、回放池、损失函数。今晚确认 SB3 能正常收敛，后续手写代码训练不收敛时，可以快速定位是自己代码逻辑 bug，而非环境 / 显卡 / 库底层问题，大幅减少调试成本。</p>
+
+<p><strong>5. 提前熟悉图像张量逻辑，贴合你的客户端渲染功底</strong></p>
+
+<p>今晚运行代码会接触图像数组、灰度画面、分辨率维度概念，明天学习 CNN 卷积时，你可以用渲染纹理、像素缓冲区的知识快速类比，降低深度学习理解门槛。</p>
+
+<hr />
+
+<h2 id="四核心总结">四、核心总结</h2>
+
+<p>今晚工作本质：<strong>扫清所有工程环境障碍，把后续两周的学习重心完全锁定在「强化学习 + 视觉 DQN 原理」上。</strong> 不提前完成环境搭建，后续每一天理论 + 代码练习都会被底层安装、兼容问题分流大量精力，打乱每日 1～2 小时的学习节奏。</p>
+
+<hr />
+
+<h2 id="五其他学习过程中的备注">五、其他学习过程中的备注</h2>
+
+<p><strong>1. 关于 PyTorch CUDA 版本兼容性</strong></p>
+
+<p>你的 RTX5060 Laptop 是 sm_120（算力 12.0）；你装的 PyTorch cu126 构建包最高只支持到 sm_90（RTX40 系、Ada 架构），不支持新的 Blackwell 12 代 GPU；因此 GPU 无法加载 CUDA 算子内核，直接抛出 <code class="language-plaintext highlighter-rouge">no kernel image is available</code>，无法使用显卡加速训练。</p>
+
+<p><strong>2. 关于 AtariWrapper 的重要性</strong></p>
+
+<p>你现在的环境原始观测是 (3, 210, 160) 彩色大图，哪怕 buffer_size 降到 5 万，数组依然巨大，只是崩溃晚一点，测试大概率还是内存报错。</p>
+
+<p>SB3 训练 Atari <strong>必须</strong>用官方封装器做灰度、裁剪、缩放到 84×84、4 帧堆叠，把观测压缩成 (4, 84, 84)，内存占用直接减少几十倍。</p>
+
+<p>你写的 <code class="language-plaintext highlighter-rouge">buffer_size=50000</code>、<code class="language-plaintext highlighter-rouge">batch_size=32</code> 参数本身没问题，32G 内存完全扛得住；<strong>不加 AtariWrapper 是致命漏洞：</strong></p>
+<ul>
+  <li>内存爆炸报错</li>
+  <li>和 DeepMind 原版 DQN、那本第三版英文书的标准输入流程不一致，后续手写 DQN 会逻辑脱节</li>
+  <li>CNN 网络输入维度不匹配，训练效果极差</li>
+</ul>
+
+<p><strong>3.</strong>（待补充）</p>]]></content><author><name>esfog</name></author><category term="强化学习" /><category term="深度学习" /><category term="Atari" /><summary type="html"><![CDATA[Day1 2026.7.1]]></summary></entry><entry><title type="html">Workflow of releasing a gem-based Jekyll theme</title><link href="https://esfog.github.io/2021/10/05/workflow-of-releasing-gem-based-jekyll-theme.html" rel="alternate" type="text/html" title="Workflow of releasing a gem-based Jekyll theme" /><published>2021-10-05T00:00:00+00:00</published><updated>2021-10-05T00:00:00+00:00</updated><id>https://esfog.github.io/2021/10/05/workflow-of-releasing-gem-based-jekyll-theme</id><content type="html" xml:base="https://esfog.github.io/2021/10/05/workflow-of-releasing-gem-based-jekyll-theme.html"><![CDATA[<p>This <a href="https://jekyllrb.com/">Jekyll</a>-based blog has been built with a custom theme created called <a href="https://github.com/bitbrain/jekyll-dash">jekyll-dash</a>. Initially, I built this theme just to share it with others, however, more and more people started using it over the past few months.</p>
 
 <p><a href="https://github.com/bitbrain/jekyll-dash"><img src="/public/media/jekyll-dash-logo.png" alt="jekyll-dash-logo" /></a></p>
 
@@ -1238,55 +1471,4 @@ git push <span class="nt">-fq</span> origin gh-pages <span class="o">&amp;&amp;<
   <li>on release, artifacts are signed and pushed to Maven Central</li>
 </ul>
 
-<p>Do you have feedback? Make sure to follow me <a href="https://twitter.com/bitbrain_">@bitbrain_</a> on <strong>Twitter</strong> and <a href="https://github.com/bitbrain">@bitbrain</a> on <strong>Github</strong>.</p>]]></content><author><name>esfog</name></author><category term="deployment" /><category term="travisci" /><category term="git" /><summary type="html"><![CDATA[I have released a new library on Maven central. Let me explain how I did that.]]></summary></entry><entry><title type="html">Level Generation in Mindmazer</title><link href="https://esfog.github.io/2017/09/03/level-generation-in-mindmazer.html" rel="alternate" type="text/html" title="Level Generation in Mindmazer" /><published>2017-09-03T00:00:00+00:00</published><updated>2017-09-03T00:00:00+00:00</updated><id>https://esfog.github.io/2017/09/03/level-generation-in-mindmazer</id><content type="html" xml:base="https://esfog.github.io/2017/09/03/level-generation-in-mindmazer.html"><![CDATA[<p>Today I want to talk about my project <a href="https://github.com/bitbrain/mindmazer">mindmazer</a>. In this simple 2D puzzle game the player has to remember a certain path to progress to the next stage. When starting this project I had to decide if I give the player a static list of predefined levels. After some time I decided against it and went for a procedural generation approach. In this article I am going to explain how these levels are generated.</p>
-
-<h1 id="the-level">The Level</h1>
-
-<p>Typical ingame level look like this:</p>
-
-<p><img src="/public/media/mindmazer-level-simple.jpg" alt="mindmazer-level-simple" /></p>
-
-<p>You notice that the shapes are quite simple and the path is easy to remember. Therefore, as more you progress in the game as more complex the level become:</p>
-
-<p><img src="/public/media/mindmazer-level-complex.jpg" alt="mindmazer-level-complex" /></p>
-
-<p>How to generate those levels? Well, first of all I am using <a href="https://libgdx.badlogicgames.com">libgdx</a> for <a href="/2017/08/17/why-I-still-use-java-for-gamedev">all my games</a>. This Java library allows me to draw things on the screen and to define a framework to run my game with. Unfortunately, this library does not give me an “out-of-the-box” level generator. Thus, I had to write an algorithm myself.</p>
-
-<h1 id="biom-data">Biom Data</h1>
-
-<p>Let us first describe how a level should get defined. I did not want to have a “random” algorithm which just appends more cells into random directions. The result would be a randomly formed snake where I wouldn’t have any control over. At least I wanted <strong>control</strong> about various level aspects. Each level is composed out of multiple parts, so called <strong>biomes</strong>. A biom is defined Java code. Let us take a look at a typical L-Shape:</p>
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x
-x
-x x
-</code></pre></div></div>
-<p>This L-Shape can be represented by a <code class="language-plaintext highlighter-rouge">byte</code> array:</p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">byte</span><span class="o">[]</span> <span class="no">L_SHAPE</span> <span class="o">=</span> <span class="o">{</span>
-   <span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span>
-   <span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span>
-   <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span>
-<span class="o">};</span>
-</code></pre></div></div>
-<p>You might notice that there is an extra entry in the array:</p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">byte</span> <span class="n">numberOfColumns</span> <span class="o">=</span> <span class="no">L_SHAPE</span><span class="o">[</span><span class="no">L_SHAPE</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
-</code></pre></div></div>
-<p>Basically we are telling our level generation to always consider the last entry in a byte array as information about the number of columns in this specific biom. This is all we need as input. We now have full control over which parts should get used to compose a level.</p>
-
-<h1 id="biom-conversion">Biom Conversion</h1>
-
-<p>We need to prepare the input data (byte arrays) into a format the algorithm understands. This format is a so called <code class="language-plaintext highlighter-rouge">Biom</code> class with the following properties:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">byte[][] data</code> the biom as a 2-dimensional byte array (without metadata)</li>
-  <li><code class="language-plaintext highlighter-rouge">int startX</code> the x index on the biom where the player could possibly start</li>
-  <li><code class="language-plaintext highlighter-rouge">int startY</code> the y index on the biom where the player could possibly start</li>
-  <li><code class="language-plaintext highlighter-rouge">int endX</code> the x index on the biom where the player could leave</li>
-  <li><code class="language-plaintext highlighter-rouge">int endY</code> the y index on the biom where the player could leave</li>
-  <li><code class="language-plaintext highlighter-rouge">int length</code> the number of cells inside a biom</li>
-  <li><code class="language-plaintext highlighter-rouge">int width</code> the width of a biom (number of cells)</li>
-  <li><code class="language-plaintext highlighter-rouge">int height</code> the height of a biom (number of cells)</li>
-</ul>
-
-<p>We now call a so called <code class="language-plaintext highlighter-rouge">BiomFactory</code> which creates a Biom object for us:</p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Biom</span> <span class="n">biom</span> <span class="o">=</span> <span class="n">biomFactory</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="no">L_SHAPE</span><span class="o">);</span>
-</code></pre></div></div>
-<p>If you are interested in how this factory works internally <a href="https://github.com/bitbrain/mindmazer/blob/master/core/src/de/bitbrain/mindmazer/levelgen/BiomFactory.java">check out the code on Github</a>.</p>]]></content><author><name>esfog</name></author><category term="gamedev" /><category term="mindmazer" /><category term="devlog" /><summary type="html"><![CDATA[This article shows how I generated levels for my libgdx game and how I applied seeding to generate them.]]></summary></entry></feed>
+<p>Do you have feedback? Make sure to follow me <a href="https://twitter.com/bitbrain_">@bitbrain_</a> on <strong>Twitter</strong> and <a href="https://github.com/bitbrain">@bitbrain</a> on <strong>Github</strong>.</p>]]></content><author><name>esfog</name></author><category term="deployment" /><category term="travisci" /><category term="git" /><summary type="html"><![CDATA[I have released a new library on Maven central. Let me explain how I did that.]]></summary></entry></feed>

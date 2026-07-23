@@ -6095,7 +6095,7 @@ a:hover {
   color: #1E2227;
 }
 .theme--light blockquote {
-  color: rgb(242.0163636364, 245.5254545455, 248.6836363636);
+  color: rgb(94.9083778966%, 96.2844919786%, 97.5229946524%);
 }
 blockquote {
   font-size: 18px;
@@ -6347,7 +6347,7 @@ html.direction--rtl pre {
   margin-top: 1em;
 }
 .theme--dark .post .post-date {
-  color: rgb(52.1739130435, 59.1304347826, 67.8260869565);
+  color: rgb(20.4603580563%, 23.1884057971%, 26.5984654731%);
 }
 .theme--light .post .post-date {
   color: #15171A;
@@ -6377,7 +6377,7 @@ html.direction--rtl pre {
   margin-bottom: 0.6em;
 }
 .theme--dark .post ul > li {
-  color: rgb(172.5829875519, 223.9170124481, 184.8278008299);
+  color: rgb(67.6796029615%, 87.8105931169%, 72.4814905215%);
 }
 .theme--light .post ul > li {
   color: #50BD6A;
@@ -6408,7 +6408,7 @@ html.direction--rtl pre {
   font-style: italic;
 }
 .theme--dark .post > blockquote {
-  color: rgb(253.4036697248, 219.3486238532, 140.5963302752);
+  color: rgb(99.3739881274%, 86.0190681777%, 55.1358157942%);
 }
 .theme--light .post > blockquote {
   color: #FCBC28;
@@ -6437,7 +6437,7 @@ html.direction--rtl pre {
   color: #FCBC28;
 }
 .theme--light .post > blockquote li {
-  color: rgb(237.6834862385, 166.9311926606, 3.3165137615);
+  color: rgb(93.2092102896%, 65.4632128081%, 1.3005936319%);
 }
 .post > blockquote li:before {
   content: "\f068";
@@ -6453,7 +6453,7 @@ html.direction--rtl pre {
   text-align: initial;
 }
 .theme--dark .post-link-wrapper > .post-meta {
-  color: rgb(52.1739130435, 59.1304347826, 67.8260869565);
+  color: rgb(20.4603580563%, 23.1884057971%, 26.5984654731%);
 }
 .theme--light .post-link-wrapper > .post-meta {
   color: #15171A;
@@ -6478,7 +6478,7 @@ html.direction--rtl pre {
   background-color: #1E2227;
 }
 .theme--light .tag, .theme--light .tag-cloud > a {
-  background-color: rgb(242.0163636364, 245.5254545455, 248.6836363636);
+  background-color: rgb(94.9083778966%, 96.2844919786%, 97.5229946524%);
 }
 .tag, .tag-cloud > a {
   padding: 0.3em 0.6em;
@@ -6486,10 +6486,10 @@ html.direction--rtl pre {
 }
 .tag:hover, .tag-cloud > a:hover {
   text-decoration: none;
-  color: rgb(154.0663900415, 216.9336099585, 169.0622406639) !important;
+  color: rgb(60.4181921731%, 85.0720039053%, 66.2989179074%) !important;
 }
 .theme--dark .tag:hover, .theme--dark .tag-cloud > a:hover {
-  background-color: rgb(41.0869565217, 46.5652173913, 53.4130434783);
+  background-color: rgb(16.1125319693%, 18.2608695652%, 20.9462915601%);
 }
 .theme--light .tag:hover, .theme--light .tag-cloud > a:hover {
   background-color: white;
@@ -6521,13 +6521,13 @@ html.direction--rtl pre {
   font-size: 10px;
 }
 .theme--dark .credits {
-  color: rgb(41.0869565217, 46.5652173913, 53.4130434783);
+  color: rgb(16.1125319693%, 18.2608695652%, 20.9462915601%);
 }
 .theme--light .credits {
   color: white;
 }
 .theme--dark .credits > a {
-  color: rgb(52.1739130435, 59.1304347826, 67.8260869565);
+  color: rgb(20.4603580563%, 23.1884057971%, 26.5984654731%);
 }
 .theme--light .credits > a {
   color: white;
@@ -6558,24 +6558,24 @@ html.direction--rtl pre {
   background-color: #1E2227;
 }
 .theme--light .pagination > a {
-  background-color: rgb(242.0163636364, 245.5254545455, 248.6836363636);
+  background-color: rgb(94.9083778966%, 96.2844919786%, 97.5229946524%);
 }
 .pagination > a:hover {
-  color: rgb(154.0663900415, 216.9336099585, 169.0622406639);
+  color: rgb(60.4181921731%, 85.0720039053%, 66.2989179074%);
 }
 .theme--dark .pagination > a:hover {
-  background-color: rgb(41.0869565217, 46.5652173913, 53.4130434783);
+  background-color: rgb(16.1125319693%, 18.2608695652%, 20.9462915601%);
 }
 .theme--light .pagination > a:hover {
   background-color: white;
 }
 .theme--dark .pagination > span {
-  color: rgb(149.3818181818, 177.9272727273, 203.6181818182);
-  background-color: rgb(23.347826087, 26.4608695652, 30.352173913);
+  color: rgb(58.5811051693%, 69.7754010695%, 79.8502673797%);
+  background-color: rgb(9.1560102302%, 10.3768115942%, 11.9028132992%);
 }
 .theme--light .pagination > span {
   color: black;
-  background-color: rgb(231.7236363636, 238.0145454545, 243.6763636364);
+  background-color: rgb(90.8720142602%, 93.3390374332%, 95.5593582888%);
 }
 
 .social_links {
@@ -6584,10 +6584,10 @@ html.direction--rtl pre {
   display: inline-block;
 }
 .theme--dark .social_links > a {
-  color: rgb(183.6909090909, 202.9636363636, 220.3090909091);
+  color: rgb(72.0356506239%, 79.5935828877%, 86.3957219251%);
 }
 .theme--light .social_links > a {
-  color: rgb(7.8260869565, 8.8695652174, 10.1739130435);
+  color: rgb(3.0690537084%, 3.4782608696%, 3.989769821%);
 }
 .social_links > a {
   display: inline-block;
@@ -6846,7 +6846,7 @@ input:checked + .toggle .star--6 {
   font-weight: 600;
 }
 .highlight .c {
-  color: rgb(96.5217391304, 109.3913043478, 125.4782608696);
+  color: rgb(37.8516624041%, 42.8985507246%, 49.2071611253%);
 }
 .highlight .err {
   color: #a61717;
@@ -6858,19 +6858,19 @@ input:checked + .toggle .star--6 {
   font-weight: bold;
 }
 .highlight .cm {
-  color: rgb(96.5217391304, 109.3913043478, 125.4782608696);
+  color: rgb(37.8516624041%, 42.8985507246%, 49.2071611253%);
   font-style: italic;
 }
 .highlight .cp {
-  color: rgb(96.5217391304, 109.3913043478, 125.4782608696);
+  color: rgb(37.8516624041%, 42.8985507246%, 49.2071611253%);
   font-weight: bold;
 }
 .highlight .c1 {
-  color: rgb(96.5217391304, 109.3913043478, 125.4782608696);
+  color: rgb(37.8516624041%, 42.8985507246%, 49.2071611253%);
   font-style: italic;
 }
 .highlight .cs {
-  color: rgb(96.5217391304, 109.3913043478, 125.4782608696);
+  color: rgb(37.8516624041%, 42.8985507246%, 49.2071611253%);
   font-weight: bold;
   font-style: italic;
 }

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html class="direction--ltr"lang="en"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>AI System Design 01：现代 AI 产品全景图与 Router | esfog</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="AI System Design 01：现代 AI 产品全景图与 Router" />
+<meta name="author" content="esfog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="AI System Design 01：现代 AI 产品全景图与 Router" />
+<meta name="twitter:description" property="og:description" content="AI System Design 01：现代 AI 产品全景图与 Router" />
+<link rel="canonical" href="https://esfog.github.io/2026/07/26/AI+System+Design+01-%E7%8E%B0%E4%BB%A3+AI+%E4%BA%A7%E5%93%81%E5%85%A8%E6%99%AF%E5%9B%BE%E4%B8%8E+Router.html" />
+<meta property="og:url" content="https://esfog.github.io/2026/07/26/AI+System+Design+01-%E7%8E%B0%E4%BB%A3+AI+%E4%BA%A7%E5%93%81%E5%85%A8%E6%99%AF%E5%9B%BE%E4%B8%8E+Router.html" />
+<meta property="og:site_name" content="esfog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-07-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-07-26T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="AI System Design 01：现代 AI 产品全景图与 Router" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"esfog"},"dateModified":"2026-07-26T00:00:00+00:00","datePublished":"2026-07-26T00:00:00+00:00","description":"AI System Design 01：现代 AI 产品全景图与 Router","headline":"AI System Design 01：现代 AI 产品全景图与 Router","mainEntityOfPage":{"@type":"WebPage","@id":"https://esfog.github.io/2026/07/26/AI+System+Design+01-%E7%8E%B0%E4%BB%A3+AI+%E4%BA%A7%E5%93%81%E5%85%A8%E6%99%AF%E5%9B%BE%E4%B8%8E+Router.html"},"url":"https://esfog.github.io/2026/07/26/AI+System+Design+01-%E7%8E%B0%E4%BB%A3+AI+%E4%BA%A7%E5%93%81%E5%85%A8%E6%99%AF%E5%9B%BE%E4%B8%8E+Router.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" type="image/png" href="/assets/favicon.png" />
+<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+<link type="application/atom+xml" rel="alternate" href="https://esfog.github.io/feed.xml" title="esfog" />
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src="/assets/js/jquery.magnific-popup.js"></script>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">esfog<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        
+        
+        <a class="color-yellow-hover" href="https://github.com/esfog"><i class="fab fa-github-square"></i></a>
+        
+        
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+
+
+<img src="
+    /public/avatar-esfog.png
+" class="author-avatar" alt="Avatar" />
+<div class="description">esfog的个人博客，持续学习，不断成长</div>
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">AI System Design 01：现代 AI 产品全景图与 Router</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="/tag/llm/">LLM</a>
+      
+      <a class="tag" href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+      
+      <a class="tag" href="/tag/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/">产品设计</a>
+      
+  </div>
+  
+  <div class="post-date">
+    Published on 26 Jul 2026
+    
+  </div>
+  
+  <h1 id="ai-system-design-01现代-ai-产品全景图与-router">AI System Design 01：现代 AI 产品全景图与 Router</h1>
+
+<blockquote>
+  <p>从「使用 AI」到「设计 AI」的第一课</p>
+</blockquote>
+
+<hr />
+
+<h2 id="本文目标">本文目标</h2>
+
+<p>阅读完本文后，希望能够回答下面几个问题：</p>
+
+<ul>
+  <li>什么是 AI System Design？</li>
+  <li>Router 和 Planner 的职责分别是什么？</li>
+  <li>为什么 Router、Planner 和 LLM 不属于同一个层次？</li>
+  <li>一个现代 AI 产品的大致执行流程是什么？</li>
+</ul>
+
+<hr />
+
+<h2 id="一本课程研究什么">一、本课程研究什么？</h2>
+
+<p>本课程研究的不是：</p>
+
+<blockquote>
+  <p>某个大模型（GPT、Claude、Gemini、Qwen 等）是如何训练出来的。</p>
+</blockquote>
+
+<p>而是：</p>
+
+<blockquote>
+  <p><strong>现代 AI 产品（ChatGPT、Cursor、Codex、Claude Code
+等）是如何组织多个模块协同完成任务的。</strong></p>
+</blockquote>
+
+<p>因此，本课程讨论的是 <strong>AI System Design（AI 系统设计）</strong>，而不是
+Transformer 算法本身。</p>
+
+<hr />
+
+<h2 id="二核心概念">二、核心概念</h2>
+
+<h3 id="职责responsibility">职责（Responsibility）</h3>
+
+<p>系统中负责完成某一类工作的角色。</p>
+
+<p>例如：</p>
+
+<ul>
+  <li>Router</li>
+  <li>Planner</li>
+  <li>Memory</li>
+  <li>Tool Manager</li>
+</ul>
+
+<h3 id="实现implementation">实现（Implementation）</h3>
+
+<p>完成这些职责所采用的技术。</p>
+
+<p>例如：</p>
+
+<ul>
+  <li>GPT-5</li>
+  <li>Claude</li>
+  <li>Qwen</li>
+  <li>DeepSeek</li>
+</ul>
+
+<blockquote>
+  <p>一个实现可以承担多个职责；一个职责也可以由不同实现完成。</p>
+</blockquote>
+
+<hr />
+
+<h2 id="三现代-ai-产品的整体架构">三、现代 AI 产品的整体架构</h2>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User
+    │
+    ▼
+Client
+    │
+    ▼
+Router
+    │
+    ▼
+Planner
+    │
+    ▼
+Tools
+    │
+    ▼
+LLM
+    │
+    ▼
+Post Processing
+    │
+    ▼
+Response
+</code></pre></div></div>
+
+<blockquote>
+  <p>这是逻辑架构（Logical Architecture），不是部署架构（Deployment
+Architecture）。</p>
+</blockquote>
+
+<hr />
+
+<h2 id="四router">四、Router</h2>
+
+<p>一句话总结：</p>
+
+<blockquote>
+  <p><strong>Router 决定任务进入哪条处理路径。</strong></p>
+</blockquote>
+
+<p>主要职责：</p>
+
+<ul>
+  <li>判断任务类型</li>
+  <li>选择 Workflow</li>
+  <li>选择 Agent</li>
+  <li>决定启用哪些工具</li>
+  <li>决定是否读取上下文</li>
+  <li>决定模型策略</li>
+</ul>
+
+<blockquote>
+  <p>Router 更关心 <strong>任务交给谁</strong>，而不是 <strong>任务如何完成</strong>。</p>
+</blockquote>
+
+<hr />
+
+<h2 id="五planner">五、Planner</h2>
+
+<p>一句话总结：</p>
+
+<blockquote>
+  <p><strong>Planner 决定如何完成已经确定的任务。</strong></p>
+</blockquote>
+
+<p>典型流程：</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>读取日志
+↓
+分析错误
+↓
+定位代码
+↓
+修改
+↓
+测试
+↓
+继续修复
+</code></pre></div></div>
+
+<p>Planner 负责：</p>
+
+<ul>
+  <li>制定执行步骤</li>
+  <li>调整执行步骤</li>
+  <li>根据结果重新规划</li>
+  <li>控制整个执行流程</li>
+</ul>
+
+<p>Planner 的输出通常不是最终答案，而是一系列待执行的 Action，例如：</p>
+
+<ol>
+  <li>Read Log</li>
+  <li>Search Code</li>
+  <li>Read File</li>
+  <li>Edit File</li>
+  <li>Run Test</li>
+</ol>
+
+<hr />
+
+<h2 id="六hypothesis假设与-evidence证据">六、Hypothesis（假设）与 Evidence（证据）</h2>
+
+<p>现代 AI 的推理过程，本质上是：</p>
+
+<blockquote>
+  <p><strong>提出假设（Hypothesis）→ 收集证据（Evidence）→ 验证假设 →
+修正假设。</strong></p>
+</blockquote>
+
+<p>例如：</p>
+
+<p>用户：<strong>登录失败</strong></p>
+
+<p>可能产生多个 Hypothesis：</p>
+
+<ul>
+  <li>Authentication</li>
+  <li>Token</li>
+  <li>Network</li>
+  <li>Server</li>
+  <li>UI</li>
+</ul>
+
+<p>随后 Tool 收集：</p>
+
+<ul>
+  <li>Log</li>
+  <li>Stack Trace</li>
+  <li>Code</li>
+  <li>Config</li>
+  <li>HTTP Response</li>
+</ul>
+
+<p>LLM 根据这些证据不断修正判断。</p>
+
+<blockquote>
+  <p>收集信息不是目的，验证假设才是目的。</p>
+</blockquote>
+
+<p>注意：</p>
+
+<p>Hypothesis 是一种通用推理概念，不仅用于 Bug
+修复，也适用于写作、规划、分析等任务。</p>
+
+<hr />
+
+<h2 id="七routerplanner-与-llm-的关系">七、Router、Planner 与 LLM 的关系</h2>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Router
+↓
+Planner
+↓
+LLM 推理
+↓
+Tool 获取信息
+↓
+LLM 更新判断
+↓
+Planner 决定下一步
+↓
+……
+</code></pre></div></div>
+
+<p>需要强调：</p>
+
+<ul>
+  <li>Router 一般不会提出具体假设。</li>
+  <li>Planner 组织执行流程。</li>
+  <li>LLM 在执行过程中提出、验证和修正假设。</li>
+</ul>
+
+<hr />
+
+<h2 id="八本章小结">八、本章小结</h2>
+
+<ol>
+  <li>现代 AI 产品是一套系统，LLM 只是其中一个核心组件。</li>
+  <li>Router 与 Planner 描述的是职责，LLM 描述的是实现。</li>
+  <li>AI 的能力来自：<strong>正确获取信息 + 正确推理 + 正确执行。</strong></li>
+</ol>
+
+<hr />
+
+<h2 id="九思维方式的改变">九、思维方式的改变</h2>
+
+<p>以后分析任何 AI 产品时，不要先问：</p>
+
+<blockquote>
+  <p>它用了什么模型？</p>
+</blockquote>
+
+<p>而应该先问：</p>
+
+<ol>
+  <li>Router 如何决定任务流向？</li>
+  <li>Planner 如何组织执行？</li>
+  <li>Tool 如何获取信息？</li>
+  <li>LLM 如何完成推理？</li>
+</ol>
+
+<p>这是从「使用 AI」走向「设计 AI」的重要思维转变。</p>
+
+<hr />
+
+<h2 id="下一课">下一课</h2>
+
+<p>Planner 是如何制定执行计划（Plan）的？
+为什么有的任务先搜索、有的先读取日志、有的先修改代码？</p>
+
+<p>这将是下一课的主题。</p>
+
+</div>
+
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2026/07/05/atari-reinforcement-learning-day2.html">
+            Atari 强化学习笔记 (Day2) - MDP马尔可夫决策过程基础概念(结合Pong)
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2026/07/01/atari-reinforcement-learning-day1.html">
+            Atari 强化学习笔记 (Day1) - 环境搭建与 GPU 验证
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+  <h2>all tags</h2>
+  <div class="tag-cloud"><a href="/tag/atari/" class="set-5">Atari</a> <a href="/tag/llm/" class="set-1">LLM</a> <a href="/tag/mdp/" class="set-1">MDP</a> <a href="/tag/%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1/" class="set-1">产品设计</a> <a href="/tag/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="set-1">大模型</a> <a href="/tag/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" class="set-5">强化学习</a> <a href="/tag/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="set-5">深度学习</a></div>
+  
+
+
+
+
+<script>
+  let i = 0;
+  const text = '';
+  const speed = parseInt('50');
+  
+  function typeWriter() {
+    if (i < text.length) {
+      document.getElementById('animated-post-description').innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+
+  document.getElementById('animated-post-description').style.display = 'initial';
+  typeWriter();
+
+  // Image modal
+  var $imgs = [];
+  $('img').each(function(idx) {
+    var obj = {
+      src: $(this).attr('src')
+    }
+    $imgs.push(obj);
+    var elem = $(this);
+    $(this).click(function() {
+      $('.modal').magnificPopup('open', idx);
+    });
+  });
+
+  $('.modal').magnificPopup({
+    items: $imgs,
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: {
+      verticalFit: true
+    }
+    
+  });
+</script>
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

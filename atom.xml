@@ -4,13 +4,308 @@
  <title>esfog</title>
  <link href="https://esfog.github.io/atom.xml" rel="self"/>
  <link href="https://esfog.github.io/"/>
- <updated>2026-07-26T02:00:09+00:00</updated>
+ <updated>2026-07-26T14:43:07+00:00</updated>
  <id>https://esfog.github.io</id>
  <author>
    <name>esfog</name>
    
  </author>
 
+ 
+ <entry>
+   <title>AI System Design 01：现代 AI 产品全景图与 Router</title>
+   <link href="https://esfog.github.io/2026/07/26/AI+System+Design+01-%E7%8E%B0%E4%BB%A3+AI+%E4%BA%A7%E5%93%81%E5%85%A8%E6%99%AF%E5%9B%BE%E4%B8%8E+Router.html"/>
+   <updated>2026-07-26T00:00:00+00:00</updated>
+   <id>https://esfog.github.io/2026/07/26/AI+System+Design+01：现代+AI+产品全景图与+Router</id>
+   <content type="html">&lt;h1 id=&quot;ai-system-design-01现代-ai-产品全景图与-router&quot;&gt;AI System Design 01：现代 AI 产品全景图与 Router&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;从「使用 AI」到「设计 AI」的第一课&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;本文目标&quot;&gt;本文目标&lt;/h2&gt;
+
+&lt;p&gt;阅读完本文后，希望能够回答下面几个问题：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;什么是 AI System Design？&lt;/li&gt;
+  &lt;li&gt;Router 和 Planner 的职责分别是什么？&lt;/li&gt;
+  &lt;li&gt;为什么 Router、Planner 和 LLM 不属于同一个层次？&lt;/li&gt;
+  &lt;li&gt;一个现代 AI 产品的大致执行流程是什么？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;一本课程研究什么&quot;&gt;一、本课程研究什么？&lt;/h2&gt;
+
+&lt;p&gt;本课程研究的不是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;某个大模型（GPT、Claude、Gemini、Qwen 等）是如何训练出来的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;而是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;现代 AI 产品（ChatGPT、Cursor、Codex、Claude Code
+等）是如何组织多个模块协同完成任务的。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;因此，本课程讨论的是 &lt;strong&gt;AI System Design（AI 系统设计）&lt;/strong&gt;，而不是
+Transformer 算法本身。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;二核心概念&quot;&gt;二、核心概念&lt;/h2&gt;
+
+&lt;h3 id=&quot;职责responsibility&quot;&gt;职责（Responsibility）&lt;/h3&gt;
+
+&lt;p&gt;系统中负责完成某一类工作的角色。&lt;/p&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Router&lt;/li&gt;
+  &lt;li&gt;Planner&lt;/li&gt;
+  &lt;li&gt;Memory&lt;/li&gt;
+  &lt;li&gt;Tool Manager&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;实现implementation&quot;&gt;实现（Implementation）&lt;/h3&gt;
+
+&lt;p&gt;完成这些职责所采用的技术。&lt;/p&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;GPT-5&lt;/li&gt;
+  &lt;li&gt;Claude&lt;/li&gt;
+  &lt;li&gt;Qwen&lt;/li&gt;
+  &lt;li&gt;DeepSeek&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;一个实现可以承担多个职责；一个职责也可以由不同实现完成。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;三现代-ai-产品的整体架构&quot;&gt;三、现代 AI 产品的整体架构&lt;/h2&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;User
+    │
+    ▼
+Client
+    │
+    ▼
+Router
+    │
+    ▼
+Planner
+    │
+    ▼
+Tools
+    │
+    ▼
+LLM
+    │
+    ▼
+Post Processing
+    │
+    ▼
+Response
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这是逻辑架构（Logical Architecture），不是部署架构（Deployment
+Architecture）。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;四router&quot;&gt;四、Router&lt;/h2&gt;
+
+&lt;p&gt;一句话总结：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Router 决定任务进入哪条处理路径。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;主要职责：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;判断任务类型&lt;/li&gt;
+  &lt;li&gt;选择 Workflow&lt;/li&gt;
+  &lt;li&gt;选择 Agent&lt;/li&gt;
+  &lt;li&gt;决定启用哪些工具&lt;/li&gt;
+  &lt;li&gt;决定是否读取上下文&lt;/li&gt;
+  &lt;li&gt;决定模型策略&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Router 更关心 &lt;strong&gt;任务交给谁&lt;/strong&gt;，而不是 &lt;strong&gt;任务如何完成&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;五planner&quot;&gt;五、Planner&lt;/h2&gt;
+
+&lt;p&gt;一句话总结：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Planner 决定如何完成已经确定的任务。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;典型流程：&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;读取日志
+↓
+分析错误
+↓
+定位代码
+↓
+修改
+↓
+测试
+↓
+继续修复
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Planner 负责：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;制定执行步骤&lt;/li&gt;
+  &lt;li&gt;调整执行步骤&lt;/li&gt;
+  &lt;li&gt;根据结果重新规划&lt;/li&gt;
+  &lt;li&gt;控制整个执行流程&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Planner 的输出通常不是最终答案，而是一系列待执行的 Action，例如：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Read Log&lt;/li&gt;
+  &lt;li&gt;Search Code&lt;/li&gt;
+  &lt;li&gt;Read File&lt;/li&gt;
+  &lt;li&gt;Edit File&lt;/li&gt;
+  &lt;li&gt;Run Test&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;六hypothesis假设与-evidence证据&quot;&gt;六、Hypothesis（假设）与 Evidence（证据）&lt;/h2&gt;
+
+&lt;p&gt;现代 AI 的推理过程，本质上是：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;提出假设（Hypothesis）→ 收集证据（Evidence）→ 验证假设 →
+修正假设。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+
+&lt;p&gt;用户：&lt;strong&gt;登录失败&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;可能产生多个 Hypothesis：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Authentication&lt;/li&gt;
+  &lt;li&gt;Token&lt;/li&gt;
+  &lt;li&gt;Network&lt;/li&gt;
+  &lt;li&gt;Server&lt;/li&gt;
+  &lt;li&gt;UI&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;随后 Tool 收集：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Log&lt;/li&gt;
+  &lt;li&gt;Stack Trace&lt;/li&gt;
+  &lt;li&gt;Code&lt;/li&gt;
+  &lt;li&gt;Config&lt;/li&gt;
+  &lt;li&gt;HTTP Response&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;LLM 根据这些证据不断修正判断。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;收集信息不是目的，验证假设才是目的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;注意：&lt;/p&gt;
+
+&lt;p&gt;Hypothesis 是一种通用推理概念，不仅用于 Bug
+修复，也适用于写作、规划、分析等任务。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;七routerplanner-与-llm-的关系&quot;&gt;七、Router、Planner 与 LLM 的关系&lt;/h2&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Router
+↓
+Planner
+↓
+LLM 推理
+↓
+Tool 获取信息
+↓
+LLM 更新判断
+↓
+Planner 决定下一步
+↓
+……
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;需要强调：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Router 一般不会提出具体假设。&lt;/li&gt;
+  &lt;li&gt;Planner 组织执行流程。&lt;/li&gt;
+  &lt;li&gt;LLM 在执行过程中提出、验证和修正假设。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;八本章小结&quot;&gt;八、本章小结&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;现代 AI 产品是一套系统，LLM 只是其中一个核心组件。&lt;/li&gt;
+  &lt;li&gt;Router 与 Planner 描述的是职责，LLM 描述的是实现。&lt;/li&gt;
+  &lt;li&gt;AI 的能力来自：&lt;strong&gt;正确获取信息 + 正确推理 + 正确执行。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;九思维方式的改变&quot;&gt;九、思维方式的改变&lt;/h2&gt;
+
+&lt;p&gt;以后分析任何 AI 产品时，不要先问：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;它用了什么模型？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;而应该先问：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Router 如何决定任务流向？&lt;/li&gt;
+  &lt;li&gt;Planner 如何组织执行？&lt;/li&gt;
+  &lt;li&gt;Tool 如何获取信息？&lt;/li&gt;
+  &lt;li&gt;LLM 如何完成推理？&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这是从「使用 AI」走向「设计 AI」的重要思维转变。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;下一课&quot;&gt;下一课&lt;/h2&gt;
+
+&lt;p&gt;Planner 是如何制定执行计划（Plan）的？
+为什么有的任务先搜索、有的先读取日志、有的先修改代码？&lt;/p&gt;
+
+&lt;p&gt;这将是下一课的主题。&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Atari 强化学习笔记 (Day2) - MDP马尔可夫决策过程基础概念(结合Pong)</title>

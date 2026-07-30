@@ -35,6 +35,10 @@ tags: LLM 大模型 产品设计
 因此，本课程讨论的是 **AI System Design（AI 系统设计）**，而不是
 Transformer 算法本身。
 
+> 全景图
+
+![AI System Design 结构图](/assets/images/common/ai-system-design.jpg)
+
 ------------------------------------------------------------------------
 
 ## 二、核心概念
